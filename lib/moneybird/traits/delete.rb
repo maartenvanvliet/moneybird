@@ -5,7 +5,7 @@ module Moneybird
 
       def delete(resource)
         client.delete(resource_path(resource))
-        if client._last_response.code.to_i != DELETE_SUCCESS_CODE
+        if client._last_response.status.to_i != DELETE_SUCCESS_CODE
           resource.errors = client._last_response.body
           return false
         end

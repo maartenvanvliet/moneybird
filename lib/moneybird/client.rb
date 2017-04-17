@@ -2,7 +2,7 @@ module Moneybird
   class Client
     attr_reader :bearer_token, :_last_response
     attr_accessor :errors
-    attr_writer :http
+    attr_writer :http, :faraday_adapter
 
     def initialize(bearer_token)
       @bearer_token = bearer_token
@@ -16,11 +16,18 @@ module Moneybird
       @version ||= 'v2'
     end
 
+    def faraday_adapter
+      @faraday_adapter ||= Faraday.default_adapter
+    end
+
     def http
       @http ||= begin
         uri = uri_for_path(base_url)
-        http = Net::HTTP.new(uri.host, uri.port)
-        http.use_ssl = uri.scheme == 'https'
+        http = Faraday.new(:url => uri) do |faraday|
+          faraday.request  :url_encoded
+          faraday.response :logger
+          faraday.adapter  faraday_adapter
+        end
         http
       end
     end
@@ -39,37 +46,26 @@ module Moneybird
 
     def get(path, headers={})
       uri = uri_for_path(path)
-      http = Net::HTTP::Get.new(uri.request_uri, self.headers.merge(headers))
-      perform(http)
+      @_last_response = http.get(uri.request_uri, nil, self.headers.merge(headers))
     end
 
     def patch(path, body=nil, headers={})
       uri = uri_for_path(path)
-      http = Net::HTTP::Patch.new(uri.request_uri, self.headers.merge(headers))
-      http.body = body
-      perform(http)
+      @_last_response = http.patch(uri.request_uri, body, self.headers.merge(headers))
     end
 
     def post(path, body=nil, headers={})
       uri = uri_for_path(path)
-      http = Net::HTTP::Post.new(uri.request_uri, self.headers.merge(headers))
-      http.body = body
-      perform(http)
+      @_last_response = http.post(uri.request_uri, body, self.headers.merge(headers))
     end
 
     def delete(path, headers={})
       uri = uri_for_path(path)
-      http = Net::HTTP::Delete.new(uri.request_uri, self.headers.merge(headers))
-      perform(http)
+      @_last_response = http.delete(uri.request_uri, nil, self.headers.merge(headers))
     end
 
     def administrations
       Moneybird::Service::Administration.new(self).all
     end
-
-    private
-      def perform(request)
-        @_last_response = http.request(request)
-      end
   end
 end

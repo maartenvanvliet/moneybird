@@ -11,7 +11,7 @@ module Moneybird
       def save(resource)
         if resource.persisted?
           client.patch(resource_path(resource), resource.to_json)
-          if client._last_response.code.to_i == UPDATE_SUCCESS_CODE
+          if client._last_response.status.to_i == UPDATE_SUCCESS_CODE
             resource.attributes = JSON.parse(client._last_response.body)
           else
             resource.errors = client._last_response.body
@@ -19,7 +19,7 @@ module Moneybird
           end
         else
           client.post(resource_path(resource), resource.to_json)
-          if client._last_response.code.to_i == CREATE_SUCCESS_CODE
+          if client._last_response.status.to_i == CREATE_SUCCESS_CODE
             resource.attributes = JSON.parse(client._last_response.body)
           else
             resource.errors = client._last_response.body

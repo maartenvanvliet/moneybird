@@ -6,7 +6,7 @@ module Moneybird
       def all
         result = client.get(path)
 
-        if result.code.to_i == GET_SUCCESS_CODE
+        if result.status.to_i == GET_SUCCESS_CODE
           JSON.parse(result.body).map do |resource|
             build(resource)
           end

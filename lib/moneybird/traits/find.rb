@@ -6,7 +6,7 @@ module Moneybird
       def find(id)
         result = client.get("#{path}/#{id}")
 
-        if result.code.to_i == GET_SUCCESS_CODE
+        if result.status.to_i == GET_SUCCESS_CODE
           build(JSON.parse(result.body))
         end
       end

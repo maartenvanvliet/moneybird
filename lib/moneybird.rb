@@ -2,6 +2,7 @@
 require 'active_support'
 require 'active_support/core_ext/object/json'
 require 'active_support/core_ext/string/inflections'
+require 'faraday'
 
 require 'logger'
 require 'uri'

@@ -9,6 +9,9 @@ require 'minitest/autorun'
 
 require 'moneybird'
 
+FakeRequest = Struct.new(:method, :path, :body)
+FakeResponse = Struct.new(:status, :body)
+
 class FakeHttp
   attr_reader :requests, :registered_requests
   attr_accessor :_next_response
@@ -17,11 +20,11 @@ class FakeHttp
     @_next_response = nil
   end
 
-  def request(net_http_request)
+  def request(http_request)
     @requests ||= []
-    @requests << [net_http_request.method,  net_http_request.path, net_http_request.body]
+    @requests << [http_request.method.to_s,  http_request.path, http_request.body]
 
-    @_next_response || mapped_response(net_http_request.method, net_http_request.path) || raise("No reponse registered for #{net_http_request.method}: #{net_http_request.path}")
+    @_next_response || mapped_response(http_request.method, http_request.path) || raise("No reponse registered for #{net_http_request.method}: #{net_http_request.path}")
   end
 
   def register_request(method, path, response)
@@ -41,9 +44,25 @@ class FakeHttp
     @registered_requests = {}
     @_next_response = nil
   end
+
+  def get(url, params, headers)
+    request(FakeRequest.new(:GET, url, nil))
+  end
+
+  def delete(url, params, headers)
+    request(FakeRequest.new(:DELETE, url, nil))
+  end
+
+  def post(url, body, headers)
+    request(FakeRequest.new(:POST, url, body))
+  end
+
+  def patch(url, body, headers)
+    request(FakeRequest.new(:PATCH, url, body))
+  end
 end
 
-FakeResponse = Struct.new(:code, :body)
+
 
 def json_response(file)
   File.read("spec/fixtures/responses/#{file}.json")
