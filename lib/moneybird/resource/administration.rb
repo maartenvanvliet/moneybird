@@ -16,6 +16,10 @@ module Moneybird::Resource
       Moneybird::Service::LedgerAccount.new(@client, id)
     end
 
+    def purchase_invoices
+      Moneybird::Service::PurchaseInvoice.new(@client, id)
+    end
+
     def sales_invoices
       Moneybird::Service::SalesInvoice.new(@client, id)
     end

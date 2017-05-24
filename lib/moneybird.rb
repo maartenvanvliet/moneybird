@@ -22,33 +22,14 @@ require "moneybird/traits/save"
 require "moneybird/traits/delete"
 require "moneybird/client"
 require "moneybird/resource"
-require "moneybird/resource/invoice/details"
-require "moneybird/resource/generic/note"
-require "moneybird/resource/generic/event"
 require "moneybird/webhook"
 
-resources = %w(
- administration
- contact
- document_style
- estimate
- financial_account
- financial_mutation
- identity
- ledger_account
- product
- recurring_sales_invoice
- sales_invoice
- tax_rate
- webhook
- workflow
-)
-
-resources.each do |resource|
-  require "moneybird/service/#{resource}"
-  require "moneybird/resource/#{resource}"
+Dir[File.join(File.dirname(__FILE__), 'moneybird/service', '**/*.rb')].each  do |service|
+  require service
 end
 
-
+Dir[File.join(File.dirname(__FILE__), 'moneybird/resource', '**/*.rb')].each  do |resource|
+  require resource
+end
 
 require "moneybird/version"

@@ -1,0 +1,115 @@
+[
+  {
+    "id": "151541225475802119",
+    "administration_id": 123,
+    "contact_id": "190119472203302893",
+    "contact": {
+      "id": "190119472203302893",
+      "administration_id": 123,
+      "company_name": "Foobar Holding B.V.",
+      "firstname": "",
+      "lastname": "",
+      "address1": "Hoofdstraat 12",
+      "address2": "",
+      "zipcode": "1234AB",
+      "city": "Amsterdam",
+      "country": "NL",
+      "phone": "",
+      "delivery_method": "Email",
+      "customer_id": "1",
+      "tax_number": "",
+      "chamber_of_commerce": "",
+      "bank_account": "",
+      "attention": "",
+      "email": "info@example.com",
+      "email_ubl": true,
+      "send_invoices_to_attention": "",
+      "send_invoices_to_email": "info@example.com",
+      "send_estimates_to_attention": "",
+      "send_estimates_to_email": "info@example.com",
+      "sepa_active": false,
+      "sepa_iban": "",
+      "sepa_iban_account_name": "",
+      "sepa_bic": "",
+      "sepa_mandate_id": "",
+      "sepa_mandate_date": null,
+      "sepa_sequence_type": "FRST",
+      "credit_card_number": "",
+      "credit_card_reference": "",
+      "credit_card_type": null,
+      "tax_number_validated_at": null,
+      "invoice_workflow_id": null,
+      "estimate_workflow_id": null,
+      "created_at": "2017-05-23T09:34:39.408Z",
+      "updated_at": "2017-05-23T09:34:39.408Z",
+      "sales_invoices_url": "http://moneybird.dev/123/sales_invoices/45ed86e329e147d4a91c8039a71a58c4c360ce0defde9b6b116dbe27f3395e2e/all",
+      "notes": [
+
+      ],
+      "custom_fields": [
+
+      ]
+    },
+    "reference": "2013-01234",
+    "date": "2017-05-23",
+    "due_date": "2017-06-06",
+    "entry_number": 3,
+    "state": "open",
+    "currency": "EUR",
+    "exchange_rate": "1.0",
+    "revenue_invoice": false,
+    "prices_are_incl_tax": false,
+    "origin": null,
+    "paid_at": null,
+    "tax_number": "",
+    "total_price_excl_tax": "300.0",
+    "total_price_excl_tax_base": "300.0",
+    "total_price_incl_tax": "363.0",
+    "total_price_incl_tax_base": "363.0",
+    "created_at": "2017-05-23T09:34:39.802Z",
+    "updated_at": "2017-05-23T09:34:39.811Z",
+    "details": [
+      {
+        "id": "190119472621684727",
+        "administration_id": 123,
+        "tax_rate_id": "190119429771626316",
+        "ledger_account_id": "190119429568202551",
+        "product_id": null,
+        "amount": null,
+        "amount_decimal": 1,
+        "description": "Delivery Apple iPad",
+        "price": "300.0",
+        "period": null,
+        "row_order": 0,
+        "total_price_excl_tax_with_discount": "300.0",
+        "total_price_excl_tax_with_discount_base": "300.0",
+        "tax_report_reference": [
+          "NL/5b"
+        ],
+        "created_at": "2017-05-23T09:34:39.807Z",
+        "updated_at": "2017-05-23T09:34:39.807Z"
+      }
+    ],
+    "payments": [
+
+    ],
+    "notes": [
+
+    ],
+    "attachments": [
+
+    ],
+    "events": [
+      {
+        "administration_id": 123,
+        "user_id": 14955320389696,
+        "action": "document_saved",
+        "link_entity_id": null,
+        "link_entity_type": null,
+        "data": null,
+        "created_at": "2017-05-23T09:34:39.819Z",
+        "updated_at": "2017-05-23T09:34:39.819Z"
+      }
+    ]
+  }
+]
