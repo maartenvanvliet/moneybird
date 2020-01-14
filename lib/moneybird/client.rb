@@ -36,12 +36,12 @@ module Moneybird
 
     %i[get patch post delete].each do |call|
       define_method call do |path, options = {}|
-        http.public_send(call, "/api/#{version}/#{path}", options).body
-
-      rescue Faraday::ParsingError => e
-        return e.response['Location'] if e.response.status == 302
-
-        raise e
+        response = http.public_send(call, "/api/#{version}/#{path}", options)
+        if response.status == 302
+          response['Location']
+        else
+          response.body
+        end
       end
     end
 
