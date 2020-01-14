@@ -43,7 +43,7 @@ describe Moneybird::Service::SalesInvoice do
   describe "#send_invoice" do
     before do
       stub_request(:patch, 'https://moneybird.com/api/v2/123/sales_invoices/456/send_invoice')
-        .to_return(status: 200, body: fixture_response(:sales_invoice))
+        .to_return(status: 200, headers: { content_type: "application/json" }, body: fixture_response(:sales_invoice))
     end
     let(:sales_invoice) { Moneybird::Resource::SalesInvoice.new(client: client, id: '456') }
     it "will send the invoice" do
