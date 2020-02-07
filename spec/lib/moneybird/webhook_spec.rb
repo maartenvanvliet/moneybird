@@ -14,4 +14,12 @@ describe Moneybird::Webhook do
   it "knows the api entity" do
     webhook.entity_resource_class.must_equal Moneybird::Resource::SalesInvoice
   end
+
+  describe "without entity data" do
+    let(:webhook) { Moneybird::Webhook.from_json(fixture_response(:delete_sales_invoice, :webhooks)) }
+
+    it "returns nil" do
+      webhook.build_entity.must_be_nil
+    end
+  end
 end

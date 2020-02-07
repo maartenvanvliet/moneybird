@@ -14,7 +14,7 @@ module Moneybird
     )
 
     def build_entity
-      entity_resource_class.new(entity)
+      entity_resource_class.new(entity) if entity
     end
 
     def entity_resource_class
