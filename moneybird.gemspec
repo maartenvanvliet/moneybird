@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", [">= 1.11", "< 3.0"]
   spec.add_development_dependency "rake", "~> 13.0"
-  spec.add_development_dependency "simplecov", "= 0.17"
+  spec.add_development_dependency "simplecov", "= 0.21.2"
   spec.add_development_dependency "minitest"
   spec.add_development_dependency "webmock", "~> 3.1"
 end
