@@ -18,7 +18,7 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby_version }}
 
-    - uses: amancevice/setup-code-climate@v0
+    - uses: amancevice/setup-code-climate@v1
       name: CodeClimate Install
       with:
         cc_test_reporter_id: 0b8e41ecbc26637a7db4e6e9d4581c445441674f689016ab45fb5c51242b59bf
