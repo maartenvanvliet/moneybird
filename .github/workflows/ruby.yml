@@ -18,14 +18,6 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby_version }}
 
-    - uses: amancevice/setup-code-climate@v0
-      name: CodeClimate Install
-      with:
-        cc_test_reporter_id: 0b8e41ecbc26637a7db4e6e9d4581c445441674f689016ab45fb5c51242b59bf
-
-    - name: CodeClimate Pre-build Notification
-      run: cc-test-reporter before-build
-
     - name: Build and test with Rake
       env:
         CI: true
@@ -33,6 +25,3 @@ jobs:
         gem install bundler
         bundle install --jobs 4 --retry 3
         bundle exec rake
-
-    - name: CodeClimate Post-build Notification
-      run: cc-test-reporter after-build
