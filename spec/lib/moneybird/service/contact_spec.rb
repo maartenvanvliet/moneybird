@@ -104,7 +104,7 @@ describe Moneybird::Service::Contact do
       stub_request(:get, "https://moneybird.com/api/v2/123/contacts/#{id}")
         .to_return(status: 404, headers: { content_type: "application/json" }, body: fixture_response(:error))
 
-      assert_raises Moneybird::HttpError::NotFound do
+      assert_raises Faraday::ResourceNotFound do
         service.find(id)
       end
     end
@@ -125,7 +125,7 @@ describe Moneybird::Service::Contact do
       stub_request(:get, "https://moneybird.com/api/v2/123/contacts/customer_id/#{customer_id}")
         .to_return(status: 404, headers: { content_type: "application/json" }, body: fixture_response(:error))
 
-      assert_raises Moneybird::HttpError::NotFound do
+      assert_raises Faraday::ResourceNotFound do
         service.find_by_customer_id(customer_id)
       end
     end
