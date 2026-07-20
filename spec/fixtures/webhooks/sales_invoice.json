@@ -43,12 +43,15 @@
 
       ]
     },
+    "contact_person_id": null,
+    "contact_person": null,
     "invoice_id": null,
     "workflow_id": 116015053116802148,
     "document_style_id": 116015053175522406,
     "state": "late",
     "invoice_date": null,
     "payment_conditions": "We verzoeken u vriendelijk het bovenstaande bedrag van {document.total_price} voor {document.due_date} te voldoen op onze bankrekening onder vermelding van het factuurnummer {document.invoice_id}. Voor vragen kunt u contact opnemen per e-mail.",
+    "short_payment_reference": "RF07C99N9AAZ",
     "reference": "Project X",
     "language": "nl",
     "currency": "EUR",
@@ -57,6 +60,7 @@
     "sent_at": null,
     "created_at": "2015-02-25T10:39:41.685Z",
     "updated_at": "2015-02-25T10:39:41.685Z",
+    "public_view_code_expires_at": "2024-06-21T14:42:09.689Z",
     "details": [
       {
         "id": 116015245648987144,
@@ -71,6 +75,7 @@
         "tax_report_reference": [
           "NL/1a"
         ],
+        "public_view_code_expires_at": "2024-06-21T14:42:09.689Z",
         "created_at": "2015-02-25T10:39:41.693Z",
         "updated_at": "2015-02-25T10:39:41.693Z"
       }
@@ -78,6 +83,9 @@
     "payments": [
 
     ],
+    "reminder_count": 0,
+    "next_reminder": "2024-04-04",
+    "original_estimate_id": null,
     "custom_fields": [
 
     ],

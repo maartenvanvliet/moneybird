@@ -36,6 +36,7 @@
   "tax_number_valid": null,
   "invoice_workflow_id": null,
   "estimate_workflow_id": null,
+  "moneybird_payments_mandate": false,
   "created_at": "2017-07-13T07:52:16.322Z",
   "updated_at": "2017-07-13T07:52:16.322Z",
   "sales_invoices_url": "http://moneybird.dev/123/sales_invoices/e0dc4f48ad7bd8f3746d55e97b09482e027029b6cf5bf1f84475fec7d2a57301/all",
@@ -50,6 +51,22 @@
       "value": "Value"
     }
   ],
+  "contact_people": [
+    {
+      "id": "416087480780981378",
+      "contact_id": "416087480773641344",
+      "administration_id": 123,
+      "firstname": "John",
+      "lastname": "Doe",
+      "phone": null,
+      "email": null,
+      "department": null,
+      "created_at": "2024-03-21T14:39:25.518Z",
+      "updated_at": "2024-03-21T14:39:25.518Z",
+      "version": 1711031965
+    }
+  ],
+  "archived": false,
   "events": [
     {
       "administration_id": 123,

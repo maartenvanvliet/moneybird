@@ -37,6 +37,7 @@
     "tax_number_valid": null,
     "invoice_workflow_id": null,
     "estimate_workflow_id": null,
+    "moneybird_payments_mandate": false,
     "created_at": "2017-07-13T07:52:14.634Z",
     "updated_at": "2017-07-13T07:52:14.634Z",
     "sales_invoices_url": "http://moneybird.dev/123/sales_invoices/59481dc990fb2c7444c404cb15f06697dc41e56fe151df0fbf29e209ef7be486/all",
@@ -46,6 +47,10 @@
     "custom_fields": [
 
     ],
+    "contact_people": [
+
+    ],
+    "archived": false,
     "events": [
       {
         "administration_id": 123,
@@ -97,6 +102,7 @@
     "tax_number_valid": null,
     "invoice_workflow_id": null,
     "estimate_workflow_id": null,
+    "moneybird_payments_mandate": false,
     "created_at": "2017-07-13T07:52:14.572Z",
     "updated_at": "2017-07-13T07:52:14.572Z",
     "sales_invoices_url": "http://moneybird.dev/123/sales_invoices/e59a49d5fbbc3abff472848935402c99b6b2835f26ec525056f5786a41dc3f29/all",
@@ -111,6 +117,10 @@
         "value": "Value"
       }
     ],
+    "contact_people": [
+
+    ],
+    "archived": false,
     "events": [
       {
         "administration_id": 123,
@@ -162,6 +172,7 @@
     "tax_number_valid": null,
     "invoice_workflow_id": null,
     "estimate_workflow_id": null,
+    "moneybird_payments_mandate": false,
     "created_at": "2017-07-13T07:52:14.608Z",
     "updated_at": "2017-07-13T07:52:14.608Z",
     "sales_invoices_url": "http://moneybird.dev/123/sales_invoices/4761794890a379797fcc02e77a8f21ab1eb621f2aa879766568afb6a24582d3b/all",
@@ -176,6 +187,10 @@
         "value": "Value"
       }
     ],
+    "contact_people": [
+
+    ],
+    "archived": false,
     "events": [
       {
         "administration_id": 123,
