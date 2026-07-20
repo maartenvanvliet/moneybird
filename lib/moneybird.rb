@@ -1,10 +1,11 @@
 
+require 'logger'
+
 require 'active_support'
 require 'active_support/core_ext/object/json'
 require 'active_support/core_ext/string/inflections'
 require 'faraday'
 
-require 'logger'
 require 'uri'
 require 'json'
 require 'net/http'
@@ -19,21 +20,7 @@ end
 require 'moneybird/resource'
 
 ##
-# Http Errors
-require 'moneybird/http_error/authorization_required'
-require 'moneybird/http_error/bad_request'
-require 'moneybird/http_error/forbidden'
-require 'moneybird/http_error/internal_server_error'
-require 'moneybird/http_error/method_not_allowed'
-require 'moneybird/http_error/not_accepted'
-require 'moneybird/http_error/not_found'
-require 'moneybird/http_error/payment_required'
-require 'moneybird/http_error/too_many_requests'
-require 'moneybird/http_error/unprocessable_entity'
-
-##
 # Middleware
-require 'moneybird/middleware/error_handling' # Depends on http errors
 require 'moneybird/middleware/pagination/links'
 require 'moneybird/middleware/pagination' # Depends on links
 
