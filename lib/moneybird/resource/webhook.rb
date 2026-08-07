@@ -9,7 +9,7 @@ module Moneybird::Resource
       url
       last_http_status
       last_http_body
-      events
+      enabled_events
       token
     )
 

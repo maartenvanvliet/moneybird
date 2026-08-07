@@ -3,7 +3,7 @@
     "id": "194733605680842680",
     "administration_id": 123,
     "url": "http://www.mocky.io/v2/5185415ba171ea3a00704eed",
-    "events": [
+    "enabled_events": [
 
     ],
     "last_http_status": null,

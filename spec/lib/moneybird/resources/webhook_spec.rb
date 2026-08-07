@@ -10,7 +10,7 @@ describe Moneybird::Resource::Webhook do
         "id" => "194733605680842680",
         "administration_id" => 123,
         "url" => "http://example.com/webhook",
-        "events" => []
+        "enabled_events" => []
       }
     )
   end
