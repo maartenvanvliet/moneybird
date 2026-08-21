@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/maartenvanvliet/moneybird"
   spec.license       = "MIT"
 
-  spec.required_ruby_version = ">= 2.6.0"
+  spec.required_ruby_version = ">= 3.3.0"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"
